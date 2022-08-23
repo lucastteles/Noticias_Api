@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Noticias.Application.Interface;
 using Noticias.Application.ViewModel;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Noticias.MVC.Controllers
@@ -34,8 +36,14 @@ namespace Noticias.MVC.Controllers
         // GET: NoticiaController/Create
         public async Task<IActionResult> Create()
         {
-           
+            var noticia = await _noticaApplication.ObterTodasNoticias();
+
+            ViewBag.noticias = noticia.Select(c => new SelectListItem()
+            { Text = c.Categoria, Value = c.Categoria.ToString() })
+                .ToList();
+
             return View();
+
         }
 
         // POST: NoticiaController/Create
@@ -59,6 +67,12 @@ namespace Noticias.MVC.Controllers
         // GET: NoticiaController/Edit/5
         public async Task<IActionResult> Edit(Guid id)
         {
+            var categoria = await _noticaApplication.ObterTodasNoticias();
+
+            ViewBag.noticias = categoria.Select(c => new SelectListItem()
+            { Text = c.Categoria, Value = c.Categoria.ToString() })
+                .ToList();
+
             var noticia = await _noticaApplication.ObterNoticiaPorId(id);
 
             return View(noticia);
@@ -83,7 +97,7 @@ namespace Noticias.MVC.Controllers
         }
 
         // POST: NoticiaController/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
