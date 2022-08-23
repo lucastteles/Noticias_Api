@@ -1,0 +1,45 @@
+﻿@model Noticias.Application.ViewModel.NoticiaViewModel
+
+@{
+    ViewData["Title"] = "Publicar Nova Noticia";
+}
+
+<h1>Publicar</h1>
+
+<h4>Noticia</h4>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Conteudo" class="control-label"></label>
+                <input asp-for="Conteudo" class="form-control" />
+                <span asp-validation-for="Conteudo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+                <input asp-for="Categoria" class="form-control" />
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Publicar" class="btn btn-primary" />
+            </div>
+           @* @if (ViewBag.Mensagem != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Muito bem!</h4>
+                    <p>@ViewBag.Mensagem</p>
+                    <hr>
+                    <p class="mb-0"></p>
+
+                </div>
+            }*@
+        </form>
+    </div>
+</div>

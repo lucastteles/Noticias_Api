@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Noticias.API", "Noticias.AP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Noticias.Application", "Noticias.Application\Noticias.Application.csproj", "{3E91DE81-6794-4C85-9018-9F5C31269526}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noticia.MVC", "Noticia.MVC\Noticia.MVC.csproj", "{99F27D23-0BDB-4ED7-9105-AE6726585BDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noticias.MVC", "Noticia.MVC\Noticias.MVC.csproj", "{99F27D23-0BDB-4ED7-9105-AE6726585BDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
