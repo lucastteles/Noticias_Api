@@ -12,11 +12,13 @@ namespace Noticias.Domain.Entidade
         private Noticia() { }
 
 
-        public Noticia(string titulo, string conteudo, CategoriaEnum categoria)
+        public Noticia(string titulo, string conteudo, CategoriaEnum categoria, string imagem)
         {
             Titulo = titulo;
             Conteudo = conteudo;
             Categoria = categoria;
+            Imagem = imagem;
+            
 
 
             ValidarTitulo();
@@ -26,6 +28,7 @@ namespace Noticias.Domain.Entidade
 
         public string Titulo { get; set; }
         public string Conteudo { get; set; }
+        public string Imagem { get; set; }
         public CategoriaEnum Categoria { get; set; }
 
         private void ValidarTitulo()
@@ -52,11 +55,12 @@ namespace Noticias.Domain.Entidade
             }
         }
 
-        public void AtualizarDadosDaNoticia(string titulo, string conteudo, CategoriaEnum categoria)//string categoria)
+        public void AtualizarDadosDaNoticia(string titulo, string conteudo, CategoriaEnum categoria, string imagem)
         {
             Titulo = titulo;
             Conteudo = conteudo;
             Categoria = categoria;
+            Imagem = imagem;
 
             ValidarTitulo();
             ValidarMaximo50Caracteres();

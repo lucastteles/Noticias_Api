@@ -23,7 +23,7 @@ namespace Noticias.Application.Application
         public async Task AdicionarNoticia(NoticiaViewModel noticiaVM)
         {
            
-            var noticia = new Noticia(noticiaVM.Titulo, noticiaVM.Conteudo, noticiaVM.Categoria);
+            var noticia = new Noticia(noticiaVM.Titulo, noticiaVM.Conteudo, noticiaVM.Categoria, noticiaVM.Imagem);
 
             //if (noticia.Categoria != noticia.Categoria)
             //{
@@ -37,7 +37,7 @@ namespace Noticias.Application.Application
         {
             var noticia = await _noticiaRepository.ObterNoticaPorId(noticiaVM.NoticiaId);
 
-            noticia.AtualizarDadosDaNoticia(noticiaVM.Titulo, noticiaVM.Conteudo, noticiaVM.Categoria);
+            noticia.AtualizarDadosDaNoticia(noticiaVM.Titulo, noticiaVM.Conteudo, noticiaVM.Categoria, noticiaVM.Imagem);
 
             await _noticiaRepository.AtualizarNoticia(noticia);
         }
@@ -51,6 +51,7 @@ namespace Noticias.Application.Application
                 Titulo = noticia.Titulo,
                 Conteudo = noticia.Conteudo,
                 Categoria = noticia.Categoria.ToString(),
+                Imagem = noticia.Imagem,
                 NoticiaId = noticia.Id
             };
 
@@ -70,6 +71,8 @@ namespace Noticias.Application.Application
                     Titulo = noticia.Titulo,
                     Conteudo = noticia.Conteudo,
                     Categoria =  noticia.Categoria.ToString(),
+                    Imagem = noticia.Imagem,
+                    DataCadastro = noticia.DataCadastro,
                     NoticiaId = noticia.Id
                    
                 };

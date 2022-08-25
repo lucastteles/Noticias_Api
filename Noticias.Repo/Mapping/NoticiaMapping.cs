@@ -32,6 +32,10 @@ namespace Noticias.Repo.Mapping
             builder.Property(x => x.DataCadastro)
             .HasColumnName("DataCadastro");
 
+
+            builder.Property(x => x.Imagem)
+           .HasColumnName("Imagem");
+
         }
     }
 }

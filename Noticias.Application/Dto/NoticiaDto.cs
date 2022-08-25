@@ -12,6 +12,8 @@ namespace Noticias.Application.Dto
         public Guid NoticiaId { get; set; }
         public string Titulo { get; set;}
         public string Conteudo { get; set;}
+        public string Imagem { get; set; }
         public string Categoria { get; set; }
+        public DateTime DataCadastro { get; set; }
     }
 }

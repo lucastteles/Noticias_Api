@@ -12,6 +12,7 @@ namespace Noticias.Application.ViewModel
         public Guid NoticiaId { get; set; }
         public string Titulo { get; set; }
         public string Conteudo { get; set; }
+        public string Imagem { get; set; }
         public CategoriaEnum Categoria { get; set; }
     }
 }

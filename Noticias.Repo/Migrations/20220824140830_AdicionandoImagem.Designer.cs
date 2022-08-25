@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Noticias.Repo;
 
 namespace Noticias.Repo.Migrations
 {
     [DbContext(typeof(NoticiaContext))]
-    partial class NoticiaContextModelSnapshot : ModelSnapshot
+    [Migration("20220824140830_AdicionandoImagem")]
+    partial class AdicionandoImagem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
