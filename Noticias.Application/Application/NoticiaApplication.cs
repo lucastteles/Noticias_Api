@@ -52,6 +52,7 @@ namespace Noticias.Application.Application
                 Conteudo = noticia.Conteudo,
                 Categoria = noticia.Categoria.ToString(),
                 Imagem = noticia.Imagem,
+                DataCadastro = noticia.DataCadastro,
                 NoticiaId = noticia.Id
             };
 

@@ -64,7 +64,7 @@ namespace Noticia.MVC
         {
             endpoints.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Noticia}/{action=Index}/{id?}");
         });
     }
 }
